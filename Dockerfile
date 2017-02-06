@@ -1,7 +1,5 @@
 FROM java
 
-ARG MIRTH_CONNECT_VERSION=3.3.1.7856.b91
-
 # Mirth Connect is run with user `connect`, uid = 1000
 # If you bind mount a volume from the host or a data container, 
 # ensure you use the same uid
@@ -17,6 +15,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates
 	&& chmod +x /usr/local/bin/gosu
 
 VOLUME /opt/mirth-connect/appdata
+
+ARG MIRTH_CONNECT_VERSION=3.3.1.7856.b91
 
 RUN \
   cd /tmp && \
