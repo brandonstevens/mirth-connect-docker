@@ -1,6 +1,6 @@
 FROM java
 
-ENV MIRTH_CONNECT_VERSION 3.3.1.7856.b91
+ARG MIRTH_CONNECT_VERSION=3.3.1.7856.b91
 
 # Mirth Connect is run with user `connect`, uid = 1000
 # If you bind mount a volume from the host or a data container, 
